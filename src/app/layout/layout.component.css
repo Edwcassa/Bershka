@@ -1,0 +1,30 @@
+.header-container {
+    height: 50px;
+    width: 100%;
+    background-color: wheat
+}
+
+.logo {
+    width: 16%;
+    min-width: 170px;
+    height: 100%;
+}
+
+.full-height-container {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.sidebar-container {
+    width: 16%;
+    min-width: 170px;
+    background-color: #f7fdf2;
+}
+
+.main-container {
+    padding: 20px;
+    width: 84%;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+}
+

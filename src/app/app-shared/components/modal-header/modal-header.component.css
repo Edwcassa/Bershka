@@ -1,0 +1,8 @@
+.h-50 {
+    height: 50px !important;
+}
+
+.modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+}

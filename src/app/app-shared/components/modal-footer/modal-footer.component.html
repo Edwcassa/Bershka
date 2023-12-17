@@ -1,0 +1,65 @@
+<div #containerFooter class="d-flex align-items-center justify-content-between row">
+    <div class="col-sm-12 col-md-{{ getColumnSize() }}">
+        @if (!formValid && !formDirtyStart) {
+            <div class="alert alert-danger alert-custom mb-sm-1 ">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                Campos vacios o incorrectos
+            </div>
+        }
+    </div>
+
+    @if (loading) {
+        <div class="col-sm-12 col-md-12 col-lg-6 d-flex justify-content-end fcenter">
+            <div class="spinner-border text-primary spinner me-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <span>
+                <b style="color: #6c757d"> Procesando datos</b>...
+            </span>
+        </div>
+    }
+
+    <div class="col-sm-12 col-md-{{ getColumnSize() }} d-flex justify-content-end">
+        @if (!loading && !view) {
+            @if (showCreateButtons) {
+                @if (!hideCloseButton) {
+                    <button class="btn btn-sm btn-outline-danger me-2" (click)="onClose()"
+                        [disabled]="disableCloseButton">
+                        <i class="fa fa-times-circle mr-2" aria-hidden="true"></i>
+                        {{ nameCloseButton }}
+                    </button>
+                }
+                @if (!hideSaveButton) {
+                    <button class="btn btn-sm btn-success" (click)="onSave()"
+                        [disabled]="disableSaveButton">
+                        <i class="{{ iconSaveButton }} mr-2" aria-hidden="true"></i>
+                        {{ nameSaveButton }}
+                    </button>
+                }
+
+            } @else {
+                @if (!hideCloseButton) {
+                    <button class="btn btn-sm btn-outline-danger me-2" (click)="onClose()"
+                        [disabled]="disableCloseButton">
+                        <i class="fa fa-times-circle mr-2" aria-hidden="true"></i>
+                        {{ nameCloseButton }}
+                    </button>
+                }
+                @if (!hideUpdateButton) {
+                    <button class="btn btn-sm btn-warning" (click)="onUpdate()"
+                        [disabled]="disableUpdateButton">
+                        <i class="fa fa-refresh mr-2" aria-hidden="true"></i>
+                        {{ nameUpdateButton }}
+                    </button>
+                }
+            }
+        }
+
+        @if (!loading && view) {
+            <button class="btn btn-sm btn-outline-mcs-tertiary shadow-none mr-2" (click)="onClose()">
+                <i class="fa fa-times-circle mr-2" aria-hidden="true"></i>
+                {{ nameViewButton }}
+            </button>
+        }
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<header class="header-container ">
+    <div class="d-flex align-items-center w-100 h-100">
+        <div class="logo fcenter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Uniqlo_logo_Japanese.svg/1000px-Uniqlo_logo_Japanese.svg.png"
+                width="80px" alt="">
+        </div>
+    </div>
+</header>
+<div class="full-height-container ">
+    <nav class="sidebar-container  ">
+        @for (item of views; track item.name) {
+        <ul class="ps-4 ">
+            <a [routerLink]="['products']">{{item.name}}</a>
+        </ul>
+        } @empty {
+        Empty list of users
+        }
+    </nav>
+    <main class="main-container bg-secondary ">
+        <router-outlet></router-outlet>
+    </main>
+</div>
