@@ -1,1 +1,203 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --mcs-primary: #005fb1;
+  --mcs-primary-light: #1270c4;
+  --mcs-primary2: #12d600;
+  --mcs-secondary: #cba903;
+  --mcs-terciary: #a7a9ac;
+  --mcs-base-light: #f7f7f7;
+  --mcs-base-dark: #2b2b36;
+  --mcs-card-dark: #30303a;
+  --mcs-primary-opaque: #f9fff4;
+  --mcs-secondary-opaque: #292820;
+
+  --mcs-action-1: #1976d2;
+  /*to Action 1*/
+  --mcs-action-2: #a8a8a8;
+  /*to Action 2*/
+  --mcs-observation-1: #a1703b;
+  /*to Observations 1*/
+  --mcs-observation-2: #ffa341;
+  /*to Observations 2*/
+  --mcs-details: #26c7e5;
+  /*to Details*/
+  --mcs-danger: #d32f2f;
+  /*to Delete*/
+  --mcs-edit: #2e7d32;
+  /*to Edit*/
+  --mcs-enable-disable: #0288d1;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+
+.fcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fbetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.text-mcs {
+  color: var(--mcs-primary);
+}
+
+.btn-sm {
+  padding: .10rem .35rem !important;
+}
+
+.btn-group {
+  padding: 5px 15px;
+  display: block;
+  outline: none
+}
+
+/*btn to Delete*/
+.btn-mcs-delete {
+  background: var(--mcs-danger);
+  color: white
+}
+
+.btn-mcs-delete:hover {
+  color: white
+}
+
+.btn-outline-mcs-delete {
+  border: solid 1px var(--mcs-danger);
+  color: var(--mcs-danger);
+}
+
+.btn-outline-mcs-delete:hover {
+  background: var(--mcs-danger);
+  color: white
+}
+
+.btn-outline-mcs-qr {
+  border: solid 1px var(--mcs-primary);
+  color: var(--mcs-primary);
+}
+
+.btn-outline-mcs-qr:hover {
+  background: var(--mcs-primary);
+  color: white
+}
+
+/*btn to Edit*/
+.btn-mcs-edit {
+  background: var(--mcs-edit);
+  color: white
+}
+
+.btn-mcs-edit:hover {
+  background: #205923;
+  color: white
+}
+
+.btn-mcs-neutral {
+  background: #b0bfcc;
+  color: white
+}
+
+.btn-mcs-neutral:hover {
+  background: #939fab;
+  color: white
+}
+
+.btn-outline-mcs-edit {
+  border: solid 1px var(--mcs-edit);
+  color: var(--mcs-edit);
+}
+
+.btn-outline-mcs-edit:hover {
+  background: var(--mcs-edit);
+  color: white
+}
+
+.btn-mcs-secondary {
+  background: #F3AD06;
+  color: white;
+}
+
+.btn-mcs-secondary:hover {
+  background: #bb8606;
+  color: white
+}
+
+.btn-mcs-primary {
+  background: #005fb1;
+  color: white;
+}
+
+.btn-mcs-primary:hover {
+  background: #005fb1;
+  color: white
+}
+
+/* TABLE */
+.table {
+  background-color: white !important;
+}
+.table > thead > tr > th {
+  vertical-align: middle !important;
+}
+
+.table > thead, .table > tbody {
+  text-align: center;
+}
+
+.table > tbody > tr > td {
+  white-space: normal !important;
+  word-break: break-word !important;
+  padding: 2px 5px !important;
+  vertical-align: middle !important;
+}
+
+.stickyhead {
+  overflow: auto;
+  width: 100%;
+  max-height: calc(100vh - 342px);
+  min-height: 560px;
+  border: solid 2px var(--mcs-primary);
+  background-color: white !important;
+}
+
+.stickyhead::-webkit-scrollbar {
+  width: 12px;
+}
+
+.stickyhead::-webkit-scrollbar-track {
+  background: #CFD8DC;
+}
+
+.stickyhead::-webkit-scrollbar-thumb {
+  background-color: var(--mcs-primary);
+  border-radius: 6px;
+  border: 3px solid #CFD8DC;
+}
+
+.stickyhead thead th {
+  position: sticky;
+  background-color: var(--mcs-primary) !important;
+  color: var(--mcs-base-light);
+}
+
+/* MODAL */
+modal-body {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
