@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {ModalHeaderComponent} from "../../../app-shared/components/modal-header/modal-header.component";
-import {ModalFooterComponent} from "../../../app-shared/components/modal-footer/modal-footer.component";
 
 @Component({
   selector: 'app-modal-product',

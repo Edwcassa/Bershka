@@ -11,7 +11,7 @@ import {ProductsRepository} from "./domain/products.repository";
 import {ProductsUsecase} from "./domain/products.usecase";
 import {ProductsWebRepository} from "./infrastructure/products.repository";
 import {ProductsUcase} from "./usecase/products.usecase";
-
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [ProductsComponent, ModalProductComponent],
@@ -20,7 +20,8 @@ import {ProductsUcase} from "./usecase/products.usecase";
         CommonModule,
         HttpClientModule,
         AppWebsiteRoutingModule,
-        AppSharedModule
+        AppSharedModule,
+        ReactiveFormsModule
     ],
   providers: [
     {provide: ProductsRepository, useClass: ProductsWebRepository},

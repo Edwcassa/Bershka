@@ -1,43 +1,38 @@
-<div class="stickyhead">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">N</th>
-        <th scope="col">Codigo</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Tallas</th>
-        <th scope="col">Colores</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (item of products; track item.id; let idx = $index) {
-      <tr>
-        <th>{{idx}}</th>
-        <td>{{item.code}}</td>
-        <td>{{item.title}}</td>
-        <td>
-          @for (size of item.sizes; track size) {
-            <span class="badge text-bg-light">{{size}}</span>
-          }
-        </td>
-        <td>
-          <span class="badge text-bg-success">{{item.colors.length}}</span>
-        </td>
-        <td>
-          <div class="btn-group">
-            <button class=" btn btn-sm btn-outline-mcs-edit" (click)="openModalProducts(item)">
-              <i class="fa fa-pencil"></i>
-            </button>
-            <button class=" btn btn-sm btn-outline-mcs-delete">
-              <i class="fa fa-trash"></i>
-            </button>
-          </div>
-        </td>
-      </tr>
-      } @empty {
-      Empty list of users
-      }
-    </tbody>
-  </table>
+<div class="stickyhead" [formGroup]="form">
+<!--    <pre>{{form.value | json}}</pre>-->
+    <table class="table table-hover">
+        <thead>
+<!--        <tr>-->
+            <th scope="col">N</th>
+            <th scope="col">nro</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Acciones</th>
+<!--        </tr>-->
+        </thead>
+        <tbody>
+        <ng-container formArrayName="items" *ngFor="let item of items.controls; let i = index">
+            <ng-container [formGroupName]="i" >
+                <tr>
+                    <td appTableKeys>
+                        <label>Item {{ i + 1 }}:</label>
+                    </td>
+                    <td appTableKeys>
+                        <input formControlName="nro" placeholder="nro">
+                    </td>
+                    <td appTableKeys>
+                        <input formControlName="code" placeholder="code">
+                    </td>
+                    <td appTableKeys>
+                        <input formControlName="name" placeholder="name">
+                    </td>
+                    <td appTableKeys>
+                        <button class="border-0" (click)="addItem()">Add Sub-Item</button>
+                    </td>
+                </tr>
+            </ng-container>
+        </ng-container>
+
+        </tbody>
+    </table>
 </div>

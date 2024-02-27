@@ -2,22 +2,43 @@ import {Component, OnInit} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ModalProductComponent} from '../modal-product/modal-product.component';
 import {ProductsUsecase} from '../../domain/products.usecase';
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+    selector: 'app-products',
+    templateUrl: './products.component.html',
+    styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
 
     products: any[] = []
+
+    form: FormGroup = new FormGroup({
+        items: new FormArray([]),
+    })
+
+    get items() {
+        return this.form.get('items') as FormArray;
+    }
 
     constructor(private readonly modalService: NgbModal,
                 private readonly productsUsecase: ProductsUsecase) {
     }
 
     async ngOnInit() {
-        await this.getProducts()
+        // await this.getProducts()
+        this.addItem()
+    }
+
+    addItem() {
+        const item = new FormGroup({
+            nro: new FormControl(null),
+            code: new FormControl(null, Validators.required),
+            name: new FormControl(0, Validators.required),
+        });
+
+        // Add the new form group to the FormArray
+        this.items.push(item);
     }
 
     async getProducts() {
