@@ -2,13 +2,11 @@
 <!--    <pre>{{form.value | json}}</pre>-->
     <table class="table table-hover">
         <thead>
-<!--        <tr>-->
             <th scope="col">N</th>
             <th scope="col">nro</th>
             <th scope="col">Codigo</th>
             <th scope="col">Nombre</th>
             <th scope="col">Acciones</th>
-<!--        </tr>-->
         </thead>
         <tbody>
         <ng-container formArrayName="items" *ngFor="let item of items.controls; let i = index">
